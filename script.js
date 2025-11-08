@@ -9,35 +9,71 @@ const state = {
     bedPrice: 4200
 };
 
-// Данные о растениях для конструктора
+// Полная база данных всех 68 растений
 const plantsData = {
     vegetables: [
-        { id: 'tomatoes', name: '🍅 Помидоры', days: 90, yield: '5кг', emoji: '🍅' },
-        { id: 'cucumbers', name: '🥒 Огурцы', days: 60, yield: '8кг', emoji: '🥒' },
-        { id: 'pepper', name: '🫑 Перец', days: 100, yield: '3кг', emoji: '🫑' },
-        { id: 'carrots', name: '🥕 Морковь', days: 80, yield: '4кг', emoji: '🥕' },
-        { id: 'pumpkin', name: '🎃 Тыква', days: 100, yield: '15кг', emoji: '🎃' },
-        { id: 'onion', name: '🧅 Лук', days: 100, yield: '3кг', emoji: '🧅' }
+        { id: 'tomatoes', name: 'Помидоры', days: 90, yield: '5кг', emoji: '🍅' },
+        { id: 'cucumbers', name: 'Огурцы', days: 60, yield: '8кг', emoji: '🥒' },
+        { id: 'pepper', name: 'Перец', days: 100, yield: '3кг', emoji: '🫑' },
+        { id: 'carrots', name: 'Морковь', days: 80, yield: '4кг', emoji: '🥕' },
+        { id: 'beet', name: 'Свёкла', days: 75, yield: '3кг', emoji: '🫐' },
+        { id: 'radish', name: 'Редис', days: 25, yield: '2кг', emoji: '🔴' },
+        { id: 'zucchini', name: 'Кабачки', days: 50, yield: '10кг', emoji: '🥒' },
+        { id: 'eggplant', name: 'Баклажаны', days: 110, yield: '4кг', emoji: '🍆' },
+        { id: 'cabbage', name: 'Капуста', days: 90, yield: '6кг', emoji: '🥬' },
+        { id: 'pumpkin', name: 'Тыква', days: 100, yield: '15кг', emoji: '🎃' },
+        { id: 'onion', name: 'Лук', days: 100, yield: '3кг', emoji: '🧅' },
+        { id: 'garlic', name: 'Чеснок', days: 180, yield: '1.5кг', emoji: '🧄' }
     ],
     herbs: [
-        { id: 'dill', name: '🌿 Укроп', days: 40, yield: '1кг', emoji: '🌿' },
-        { id: 'parsley', name: '🌿 Петрушка', days: 70, yield: '1кг', emoji: '🌿' },
-        { id: 'basil', name: '🌿 Базилик', days: 60, yield: '0.8кг', emoji: '🌿' },
-        { id: 'lettuce', name: '🥗 Салат', days: 45, yield: '2кг', emoji: '🥗' },
-        { id: 'arugula', name: '🥬 Руккола', days: 30, yield: '1кг', emoji: '🥬' },
-        { id: 'mint', name: '🌿 Мята', days: 90, yield: '0.5кг', emoji: '🌿' }
+        { id: 'dill', name: 'Укроп', days: 40, yield: '1кг', emoji: '🌿' },
+        { id: 'parsley', name: 'Петрушка', days: 70, yield: '1кг', emoji: '🌿' },
+        { id: 'basil', name: 'Базилик', days: 60, yield: '0.8кг', emoji: '🌿' },
+        { id: 'arugula', name: 'Руккола', days: 30, yield: '1кг', emoji: '🥬' },
+        { id: 'lettuce', name: 'Салат', days: 45, yield: '2кг', emoji: '🥗' },
+        { id: 'cilantro', name: 'Кинза', days: 40, yield: '0.8кг', emoji: '🌿' },
+        { id: 'sorrel', name: 'Щавель', days: 60, yield: '1.5кг', emoji: '🌿' },
+        { id: 'spinach', name: 'Шпинат', days: 40, yield: '1.2кг', emoji: '🥬' },
+        { id: 'mint', name: 'Мята', days: 90, yield: '0.5кг', emoji: '🌿' },
+        { id: 'rosemary', name: 'Розмарин', days: 120, yield: '0.3кг', emoji: '🌿' }
     ],
     berries: [
-        { id: 'strawberry', name: '🍓 Клубника', days: 90, yield: '2кг', emoji: '🍓' },
-        { id: 'raspberry', name: '🫐 Малина', days: 365, yield: '3кг', emoji: '🫐' },
-        { id: 'currant', name: '🫐 Смородина', days: 365, yield: '4кг', emoji: '🫐' },
-        { id: 'gooseberry', name: '🫐 Крыжовник', days: 365, yield: '3кг', emoji: '🫐' }
+        { id: 'strawberry', name: 'Клубника', days: 90, yield: '2кг', emoji: '🍓' },
+        { id: 'raspberry', name: 'Малина', days: 365, yield: '3кг', emoji: '🫐' },
+        { id: 'currant', name: 'Смородина', days: 365, yield: '4кг', emoji: '🫐' },
+        { id: 'gooseberry', name: 'Крыжовник', days: 365, yield: '3кг', emoji: '🫐' },
+        { id: 'blackberry', name: 'Ежевика', days: 365, yield: '3кг', emoji: '🫐' },
+        { id: 'blueberry', name: 'Голубика', days: 730, yield: '5кг', emoji: '🫐' },
+        { id: 'honeysuckle', name: 'Жимолость', days: 730, yield: '2кг', emoji: '🫐' },
+        { id: 'wild-strawberry', name: 'Земляника', days: 60, yield: '1кг', emoji: '🍓' }
     ],
     flowers: [
-        { id: 'tulips', name: '🌷 Тюльпаны', days: 120, yield: '20 шт', emoji: '🌷' },
-        { id: 'roses', name: '🌹 Розы', days: 365, yield: '30 шт', emoji: '🌹' },
-        { id: 'peonies', name: '🌺 Пионы', days: 730, yield: '15 шт', emoji: '🌺' },
-        { id: 'sunflowers', name: '🌻 Подсолнухи', days: 80, yield: '10 шт', emoji: '🌻' }
+        { id: 'tulips', name: 'Тюльпаны', days: 120, yield: '20 шт', emoji: '🌷' },
+        { id: 'peonies', name: 'Пионы', days: 730, yield: '15 шт', emoji: '🌺' },
+        { id: 'roses', name: 'Розы', days: 365, yield: '30 шт', emoji: '🌹' },
+        { id: 'lavender', name: 'Лаванда', days: 180, yield: '0.5кг', emoji: '🪻' },
+        { id: 'asters', name: 'Астры', days: 90, yield: '25 шт', emoji: '🌸' },
+        { id: 'dahlias', name: 'Георгины', days: 100, yield: '20 шт', emoji: '🌺' },
+        { id: 'gladiolus', name: 'Гладиолусы', days: 90, yield: '20 шт', emoji: '🌸' },
+        { id: 'daisies', name: 'Ромашки', days: 70, yield: '30 шт', emoji: '🌼' },
+        { id: 'sunflowers', name: 'Подсолнухи', days: 80, yield: '10 шт', emoji: '🌻' },
+        { id: 'calendula', name: 'Календула', days: 60, yield: '50 шт', emoji: '🌼' },
+        { id: 'lilies', name: 'Лилии', days: 90, yield: '15 шт', emoji: '🌺' },
+        { id: 'narcissus', name: 'Нарциссы', days: 100, yield: '25 шт', emoji: '🌼' },
+        { id: 'hydrangea', name: 'Гортензия', days: 365, yield: '12 шт', emoji: '💐' },
+        { id: 'irises', name: 'Ирисы', days: 120, yield: '20 шт', emoji: '🌸' },
+        { id: 'chrysanthemums', name: 'Хризантемы', days: 100, yield: '30 шт', emoji: '🌼' },
+        { id: 'marigolds', name: 'Бархатцы', days: 60, yield: '40 шт', emoji: '🌻' },
+        { id: 'petunias', name: 'Петунии', days: 75, yield: '35 шт', emoji: '🌺' },
+        { id: 'pansies', name: 'Анютины глазки', days: 80, yield: '30 шт', emoji: '🌸' }
+    ],
+    fruits: [
+        { id: 'apples', name: 'Яблоки', days: 1095, yield: '15кг', emoji: '🍎' },
+        { id: 'pears', name: 'Груши', days: 1095, yield: '12кг', emoji: '🍐' },
+        { id: 'plums', name: 'Слива', days: 1095, yield: '10кг', emoji: '🟣' },
+        { id: 'cherries', name: 'Вишня', days: 1095, yield: '8кг', emoji: '🍒' },
+        { id: 'apricots', name: 'Абрикос', days: 1460, yield: '12кг', emoji: '🍑' },
+        { id: 'grapes', name: 'Виноград', days: 730, yield: '6кг', emoji: '🍇' }
     ]
 };
 
@@ -61,7 +97,6 @@ const compatibility = {
 document.addEventListener('DOMContentLoaded', () => {
     initPreloader();
     initHeader();
-    initBanner();
     initBurgerMenu();
     initScrollAnimations();
     initPlantsTabs();
@@ -69,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initSeasons();
     initStats();
     initFloatingButton();
-    initBedGrid();
 });
 
 // ==========================================
@@ -105,16 +139,6 @@ function initHeader() {
     });
 }
 
-function initBanner() {
-    const banner = document.querySelector('.seasonal-banner');
-    const closeBtn = document.querySelector('.banner-close');
-    
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            banner.style.display = 'none';
-        });
-    }
-}
 
 function initBurgerMenu() {
     const burgerBtn = document.querySelector('.burger-menu');
@@ -223,6 +247,19 @@ function initConstructor() {
     initSizeCards();
     initSelectorTabs();
     initSelectorItems();
+    initBedGrid();
+    
+    // Инициализируем кнопки действий
+    const fillAllBtn = document.getElementById('fill-all-btn');
+    const clearAllBtn = document.getElementById('clear-all-btn');
+    
+    if (fillAllBtn) {
+        fillAllBtn.addEventListener('click', fillAllBed);
+    }
+    
+    if (clearAllBtn) {
+        clearAllBtn.addEventListener('click', clearAllBed);
+    }
 }
 
 function initSizeCards() {
@@ -260,15 +297,20 @@ function updateSelectorItems() {
     const selectorItems = document.getElementById('selector-items');
     const plants = plantsData[state.currentPlantType];
     
+    if (!plants) {
+        console.error('No plants found for type:', state.currentPlantType);
+        return;
+    }
+    
     selectorItems.innerHTML = '';
     
     plants.forEach(plant => {
         const button = document.createElement('button');
         button.className = 'selector-item';
         button.dataset.plant = plant.id;
-        button.textContent = plant.name;
+        button.innerHTML = `${plant.emoji} ${plant.name}`;
         
-        // Проверяем, выбрано ли растение
+        // Проверяем, есть ли это растение в выбранных
         if (state.selectedPlants.some(p => p.id === plant.id)) {
             button.classList.add('selected');
         }
@@ -283,24 +325,65 @@ function initSelectorItems() {
     updateSelectorItems();
 }
 
+// Хранилище для текущего выбранного растения для "засадить всю грядку"
+let lastSelectedPlant = null;
+
 function togglePlant(plant, button) {
+    // Сохраняем последнее выбранное растение
+    lastSelectedPlant = plant;
+    
     const index = state.selectedPlants.findIndex(p => p.id === plant.id);
     
     if (index > -1) {
-        // Удаляем растение
-        state.selectedPlants.splice(index, 1);
+        // Удаляем растение (убираем все экземпляры этого растения)
+        state.selectedPlants = state.selectedPlants.filter(p => p.id !== plant.id);
         button.classList.remove('selected');
     } else {
-        // Добавляем растение
-        const maxPlants = Math.floor(state.selectedBedSize / 2);
+        // Добавляем одно растение
+        const maxPlants = state.selectedBedSize;
         if (state.selectedPlants.length < maxPlants) {
             state.selectedPlants.push(plant);
             button.classList.add('selected');
+        } else {
+            alert(`Грядка заполнена! Максимум ${maxPlants} растений на ${state.selectedBedSize}м²`);
         }
     }
     
     updateCalculator();
     updateBedGrid();
+}
+
+// Новая функция: засадить всю грядку одним растением
+function fillAllBed() {
+    if (!lastSelectedPlant) {
+        alert('Сначала выберите растение, которым хотите засадить грядку');
+        return;
+    }
+    
+    const maxPlants = state.selectedBedSize;
+    state.selectedPlants = [];
+    
+    for (let i = 0; i < maxPlants; i++) {
+        state.selectedPlants.push({...lastSelectedPlant});
+    }
+    
+    updateCalculator();
+    updateBedGrid();
+    updateSelectorItems(); // Обновляем кнопки
+}
+
+// Новая функция: очистить грядку
+function clearAllBed() {
+    if (state.selectedPlants.length === 0) {
+        return;
+    }
+    
+    if (confirm('Очистить всю грядку?')) {
+        state.selectedPlants = [];
+        updateCalculator();
+        updateBedGrid();
+        updateSelectorItems(); // Обновляем кнопки
+    }
 }
 
 function initBedGrid() {
@@ -309,10 +392,18 @@ function initBedGrid() {
 
 function updateBedGrid() {
     const bedGrid = document.getElementById('bed-grid');
-    const cellCount = Math.min(state.selectedBedSize, 16);
+    const cellCount = state.selectedBedSize;
     
     bedGrid.innerHTML = '';
-    bedGrid.style.gridTemplateColumns = `repeat(4, 1fr)`;
+    
+    // Настраиваем сетку в зависимости от размера
+    if (state.selectedBedSize === 4) {
+        bedGrid.style.gridTemplateColumns = `repeat(2, 1fr)`;
+    } else if (state.selectedBedSize === 10) {
+        bedGrid.style.gridTemplateColumns = `repeat(5, 1fr)`;
+    } else if (state.selectedBedSize === 20) {
+        bedGrid.style.gridTemplateColumns = `repeat(5, 1fr)`;
+    }
     
     for (let i = 0; i < cellCount; i++) {
         const cell = document.createElement('div');
@@ -321,6 +412,16 @@ function updateBedGrid() {
         if (i < state.selectedPlants.length) {
             cell.classList.add('planted');
             cell.textContent = state.selectedPlants[i].emoji;
+            cell.title = state.selectedPlants[i].name;
+            
+            // Добавляем возможность удалить растение кликом по ячейке
+            cell.addEventListener('click', () => {
+                state.selectedPlants.splice(i, 1);
+                updateCalculator();
+                updateBedGrid();
+                updateSelectorItems();
+            });
+            cell.style.cursor = 'pointer';
         }
         
         bedGrid.appendChild(cell);

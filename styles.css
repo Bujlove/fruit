@@ -624,6 +624,57 @@ body {
     background: var(--color-light-green);
 }
 
+.selector-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.action-button {
+    flex: 1;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 180px;
+}
+
+.action-button span {
+    font-size: 18px;
+}
+
+.action-button.fill-all {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.action-button.fill-all:hover {
+    background: var(--color-dark-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+}
+
+.action-button.clear-all {
+    background: var(--color-background);
+    color: var(--color-text);
+    border: 2px solid var(--color-dark-green);
+}
+
+.action-button.clear-all:hover {
+    background: var(--color-tomato);
+    color: var(--color-white);
+    border-color: var(--color-tomato);
+    transform: translateY(-2px);
+}
+
 .bed-grid {
     background: var(--color-dark-green);
     padding: 24px;

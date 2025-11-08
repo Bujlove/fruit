@@ -8,12 +8,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Сезонный баннер -->
-    <div id="seasonal-banner" class="seasonal-banner">
-        <p>Весенняя акция: клубника в подарок к любой грядке! 🍓</p>
-        <button class="banner-close" aria-label="Закрыть баннер">×</button>
-    </div>
-
     <!-- Навигация -->
     <header class="header" id="header">
         <nav class="nav container">
@@ -530,15 +524,20 @@
                         <button class="selector-tab" data-type="herbs">🌿 Зелень</button>
                         <button class="selector-tab" data-type="berries">🍓 Ягоды</button>
                         <button class="selector-tab" data-type="flowers">🌸 Цветы</button>
+                        <button class="selector-tab" data-type="fruits">🍎 Фрукты</button>
                     </div>
                     
                     <div class="selector-items" id="selector-items">
-                        <button class="selector-item" data-plant="tomatoes">🍅 Помидоры</button>
-                        <button class="selector-item" data-plant="cucumbers">🥒 Огурцы</button>
-                        <button class="selector-item" data-plant="pepper">🫑 Перец</button>
-                        <button class="selector-item" data-plant="carrots">🥕 Морковь</button>
-                        <button class="selector-item" data-plant="pumpkin">🎃 Тыква</button>
-                        <button class="selector-item" data-plant="onion">🧅 Лук</button>
+                        <!-- Растения загружаются динамически через JS -->
+                    </div>
+                    
+                    <div class="selector-actions">
+                        <button class="action-button fill-all" id="fill-all-btn">
+                            <span>🌱</span> Засадить всю грядку
+                        </button>
+                        <button class="action-button clear-all" id="clear-all-btn">
+                            <span>🧹</span> Очистить грядку
+                        </button>
                     </div>
                 </div>
                 
