@@ -1,0 +1,6 @@
+# Ignore only these files
+*.md
+!README.md
+.git
+.DS_Store
+
