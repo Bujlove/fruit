@@ -637,5 +637,136 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// ==========================================
+// ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК DASHBOARD
+// ==========================================
+
+function initDashboardTabs() {
+    const tabs = document.querySelectorAll('.dashboard-tab');
+    const contents = document.querySelectorAll('.dashboard-content');
+    
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+            // Убираем активные классы
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+            
+            // Добавляем активный класс
+            tab.classList.add('active');
+            contents[index].classList.add('active');
+        });
+    });
+}
+
+// Инициализируем вкладки dashboard
+initDashboardTabs();
+
+// ==========================================
+// УЛУЧШЕННАЯ ВИЗУАЛИЗАЦИЯ ГРЯДОК
+// ==========================================
+
+function updateBedGridSize() {
+    const bedGrid = document.getElementById('bed-grid');
+    if (!bedGrid) return;
+    
+    // Удаляем предыдущие классы размеров
+    bedGrid.classList.remove('size-small', 'size-medium', 'size-large');
+    
+    // Добавляем класс в зависимости от размера
+    if (state.selectedBedSize === 4) {
+        bedGrid.classList.add('size-small');
+    } else if (state.selectedBedSize === 10) {
+        bedGrid.classList.add('size-medium');
+    } else if (state.selectedBedSize === 20) {
+        bedGrid.classList.add('size-large');
+    }
+}
+
+// Обновляем оригинальную функцию initSizeCards
+const originalInitSizeCards = initSizeCards;
+initSizeCards = function() {
+    const sizeCards = document.querySelectorAll('.size-card');
+    
+    sizeCards.forEach(card => {
+        card.addEventListener('click', () => {
+            sizeCards.forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+            
+            state.selectedBedSize = parseInt(card.dataset.size);
+            state.bedPrice = parseInt(card.dataset.price);
+            
+            updateCalculator();
+            updateBedGrid();
+            updateBedGridSize(); // Новая функция!
+        });
+    });
+};
+
+// Вызываем обновленную функцию
+if (typeof initSizeCards === 'function') {
+    initSizeCards();
+}
+
+// ==========================================
+// ИНТЕРАКТИВНОСТЬ СОСЕДЕЙ
+// ==========================================
+
+function initNeighbors() {
+    const followButtons = document.querySelectorAll('.neighbor-follow');
+    
+    followButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            if (button.textContent === 'Подписаться') {
+                button.textContent = 'Вы подписаны ✓';
+                button.style.background = 'var(--color-light-green)';
+                
+                // Добавляем анимацию
+                button.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    button.style.transform = 'scale(1)';
+                }, 300);
+            } else {
+                button.textContent = 'Подписаться';
+                button.style.background = 'var(--color-primary)';
+            }
+        });
+    });
+}
+
+// Инициализируем соседей после загрузки
+window.addEventListener('load', () => {
+    initNeighbors();
+});
+
+// ==========================================
+// ДОПОЛНИТЕЛЬНЫЕ АНИМАЦИИ
+// ==========================================
+
+// Анимация появления карточек соседей
+const neighborObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }, index * 100);
+            neighborObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+window.addEventListener('load', () => {
+    const neighborCards = document.querySelectorAll('.neighbor-card');
+    neighborCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease-out';
+        neighborObserver.observe(card);
+    });
+});
+
 console.log('🌱 Сад: Лендинг загружен успешно!');
+console.log('✨ Новые функции: вкладки dashboard, сады соседей, улучшенная визуализация');
 

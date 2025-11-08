@@ -9,16 +9,17 @@
 }
 
 :root {
-    /* Цветовая палитра */
-    --color-mint: #A8E6CF;
-    --color-dark-green: #56AB91;
-    --color-olive: #718F71;
-    --color-tomato: #FF6B6B;
-    --color-berry: #E63946;
-    --color-lavender: #B298DC;
-    --color-apple: #FFB703;
-    --color-background: #F8FBF8;
-    --color-text: #2D3E2D;
+    /* Новая яркая цветовая палитра */
+    --color-primary: #2ECC71;      /* Изумрудно-зелёный */
+    --color-dark-green: #27AE60;   /* Насыщенный зелёный */
+    --color-light-green: #00D084;  /* Яркий бирюзовый */
+    --color-tomato: #FF5252;       /* Яркий красный */
+    --color-berry: #E91E63;        /* Малиновый */
+    --color-orange: #FF9500;       /* Сочный апельсин */
+    --color-lavender: #9B59B6;     /* Насыщенный фиолетовый */
+    --color-apple: #FFC107;        /* Золотисто-жёлтый */
+    --color-background: #F5F9FF;   /* Очень светлый голубоватый */
+    --color-text: #1A1A1A;
     --color-white: #FFFFFF;
     
     /* Типографика */
@@ -130,7 +131,7 @@ body {
 }
 
 .logo-icon {
-    color: var(--color-dark-green);
+    color: var(--color-primary);
 }
 
 .burger-menu {
@@ -221,7 +222,7 @@ body {
 
 .hero-subtitle {
     font-size: 20px;
-    color: var(--color-olive);
+    color: var(--color-dark-green);
     margin-bottom: 32px;
     animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
@@ -367,7 +368,7 @@ body {
 .section-subtitle {
     text-align: center;
     font-size: 18px;
-    color: var(--color-olive);
+    color: var(--color-dark-green);
     margin-top: -40px;
     margin-bottom: 48px;
 }
@@ -418,7 +419,7 @@ body {
 }
 
 .step-card p {
-    color: var(--color-olive);
+    color: var(--color-dark-green);
     line-height: 1.6;
 }
 
@@ -453,7 +454,7 @@ body {
 
 .tab-button:hover {
     transform: translateY(-2px);
-    border-color: var(--color-mint);
+    border-color: var(--color-light-green);
 }
 
 .tab-button.active {
@@ -486,7 +487,7 @@ body {
 .plant-item:hover {
     transform: translateY(-8px) rotate(2deg);
     box-shadow: 0 8px 24px rgba(86, 171, 145, 0.2);
-    border-color: var(--color-mint);
+    border-color: var(--color-light-green);
 }
 
 .plant-emoji {
@@ -503,7 +504,7 @@ body {
 
 .plant-time {
     font-size: 14px;
-    color: var(--color-olive);
+    color: var(--color-dark-green);
 }
 
 /* ==========================================
@@ -550,7 +551,7 @@ body {
 }
 
 .size-card:hover {
-    border-color: var(--color-mint);
+    border-color: var(--color-light-green);
     transform: translateX(4px);
 }
 
@@ -567,7 +568,7 @@ body {
 
 .size-description {
     font-size: 14px;
-    color: var(--color-olive);
+    color: var(--color-dark-green);
 }
 
 .size-price {
@@ -614,17 +615,17 @@ body {
 }
 
 .selector-item:hover {
-    border-color: var(--color-mint);
+    border-color: var(--color-light-green);
     transform: scale(1.05);
 }
 
 .selector-item.selected {
     border-color: var(--color-dark-green);
-    background: var(--color-mint);
+    background: var(--color-light-green);
 }
 
 .bed-grid {
-    background: var(--color-olive);
+    background: var(--color-dark-green);
     padding: 24px;
     border-radius: 12px;
     min-height: 200px;
@@ -645,7 +646,7 @@ body {
 }
 
 .bed-cell.planted {
-    background: var(--color-mint);
+    background: var(--color-light-green);
     animation: plant 0.5s ease-out;
 }
 
@@ -684,7 +685,7 @@ body {
 }
 
 .calc-label {
-    color: var(--color-olive);
+    color: var(--color-dark-green);
     font-size: 14px;
 }
 
@@ -804,7 +805,7 @@ body {
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--color-dark-green), var(--color-mint));
+    background: linear-gradient(90deg, var(--color-dark-green), var(--color-light-green));
     border-radius: 4px;
     transition: width 1s ease-out;
 }
@@ -827,12 +828,12 @@ body {
 }
 
 .calendar-item.today {
-    background: var(--color-mint);
+    background: var(--color-light-green);
     font-weight: 500;
 }
 
 .calendar-date {
-    color: var(--color-olive);
+    color: var(--color-dark-green);
     font-size: 14px;
 }
 
@@ -883,7 +884,7 @@ body {
 }
 
 .season-card p {
-    color: var(--color-olive);
+    color: var(--color-dark-green);
 }
 
 .season-plants {
@@ -972,7 +973,7 @@ body {
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, var(--color-dark-green), var(--color-mint));
+    background: linear-gradient(135deg, var(--color-dark-green), var(--color-light-green));
     color: var(--color-white);
     padding: 6px 20px;
     border-radius: 50px;
@@ -998,7 +999,7 @@ body {
 
 .price-period {
     font-size: 16px;
-    color: var(--color-olive);
+    color: var(--color-dark-green);
 }
 
 .pricing-features {
@@ -1052,7 +1053,7 @@ body {
 }
 
 .option-card {
-    background: linear-gradient(135deg, var(--color-lavender), var(--color-mint));
+    background: linear-gradient(135deg, var(--color-lavender), var(--color-light-green));
     padding: 32px;
     border-radius: 16px;
     display: flex;
@@ -1132,7 +1133,7 @@ body {
 }
 
 .stat-label {
-    color: var(--color-olive);
+    color: var(--color-dark-green);
     font-size: 16px;
 }
 
@@ -1156,7 +1157,7 @@ body {
 .testimonial-image {
     width: 64px;
     height: 64px;
-    background: var(--color-mint);
+    background: var(--color-light-green);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1171,7 +1172,7 @@ body {
 }
 
 .testimonial-author {
-    color: var(--color-olive);
+    color: var(--color-dark-green);
     font-size: 14px;
 }
 
@@ -1202,7 +1203,7 @@ body {
 .combo-card:hover {
     transform: translateY(-8px) rotate(1deg);
     box-shadow: 0 8px 24px rgba(45, 62, 45, 0.12);
-    border-color: var(--color-mint);
+    border-color: var(--color-light-green);
 }
 
 .combo-icon {
@@ -1244,7 +1245,7 @@ body {
 }
 
 .combo-button:hover {
-    background: var(--color-olive);
+    background: var(--color-dark-green);
     transform: scale(1.05);
 }
 
@@ -1275,7 +1276,7 @@ body {
 }
 
 .footer-logo .logo-icon {
-    color: var(--color-mint);
+    color: var(--color-light-green);
 }
 
 .footer-description {
@@ -1327,7 +1328,7 @@ body {
 }
 
 .footer-links a:hover {
-    color: var(--color-mint);
+    color: var(--color-light-green);
 }
 
 .footer-bottom {
@@ -1627,5 +1628,424 @@ button:focus-visible,
 a:focus-visible {
     outline: 2px solid var(--color-dark-green);
     outline-offset: 2px;
+}
+
+/* ==========================================
+   НОВЫЕ СТИЛИ ДЛЯ УЛУЧШЕННОГО ФУНКЦИОНАЛА
+   ========================================== */
+
+/* Dashboard вкладки - переключаемый контент */
+.dashboard-content {
+    display: none;
+}
+
+.dashboard-content.active {
+    display: grid;
+    gap: 32px;
+}
+
+.progress-detail {
+    font-size: 14px;
+    color: var(--color-dark-green);
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* Чат с агрономом */
+.chat-interface {
+    background: var(--color-white);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.chat-messages {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 24px;
+    padding: 16px;
+    background: var(--color-background);
+    border-radius: 12px;
+}
+
+.chat-message {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+.chat-message.user {
+    flex-direction: row-reverse;
+}
+
+.message-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-light-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.message-content {
+    background: var(--color-white);
+    padding: 12px 16px;
+    border-radius: 12px;
+    max-width: 70%;
+}
+
+.chat-message.user .message-content {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.message-time {
+    font-size: 12px;
+    color: var(--color-dark-green);
+    opacity: 0.7;
+    margin-left: 8px;
+}
+
+.chat-input {
+    display: flex;
+    gap: 12px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid var(--color-background);
+    border-radius: 50px;
+    font-size: 14px;
+}
+
+.chat-send {
+    padding: 12px 24px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.chat-send:hover {
+    background: var(--color-dark-green);
+    transform: scale(1.05);
+}
+
+.chat-note {
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-dark-green);
+    margin-top: 16px;
+}
+
+/* Урожай - история */
+.harvest-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-light-green));
+    padding: 24px;
+    border-radius: 16px;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.stat-value {
+    font-size: 36px;
+    font-weight: 300;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.harvest-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.harvest-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--color-white);
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid var(--color-background);
+    transition: var(--transition);
+}
+
+.harvest-item:hover {
+    border-color: var(--color-light-green);
+    transform: translateX(4px);
+}
+
+.harvest-item.completed {
+    opacity: 0.7;
+}
+
+.harvest-item.upcoming {
+    border-style: dashed;
+}
+
+.harvest-icon {
+    font-size: 48px;
+    flex-shrink: 0;
+}
+
+.harvest-details {
+    flex: 1;
+}
+
+.harvest-details h5 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.harvest-details p {
+    font-size: 14px;
+    color: var(--color-dark-green);
+    margin-bottom: 4px;
+}
+
+.harvest-date {
+    font-size: 12px;
+    color: var(--color-dark-green);
+    opacity: 0.7;
+}
+
+.harvest-button {
+    padding: 12px 24px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.harvest-button:hover {
+    background: var(--color-dark-green);
+    transform: scale(1.05);
+}
+
+.harvest-status {
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Сады соседей */
+.neighbors-section {
+    padding: 80px 0;
+    background: var(--color-background);
+}
+
+.neighbors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.neighbor-card {
+    background: var(--color-white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+}
+
+.neighbor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.neighbor-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 24px;
+    background: linear-gradient(135deg, var(--color-background), var(--color-white));
+}
+
+.neighbor-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.neighbor-info {
+    flex: 1;
+}
+
+.neighbor-info h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.neighbor-info p {
+    font-size: 14px;
+    color: var(--color-dark-green);
+}
+
+.neighbor-follow {
+    padding: 8px 20px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.neighbor-follow:hover {
+    background: var(--color-dark-green);
+    transform: scale(1.05);
+}
+
+.neighbor-garden {
+    background: var(--color-background);
+    padding: 16px;
+}
+
+.neighbor-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 24px;
+    background: var(--color-background);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.neighbor-stat {
+    text-align: center;
+}
+
+.neighbor-stat .stat-value {
+    display: block;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+.neighbor-stat .stat-label {
+    font-size: 12px;
+    color: var(--color-dark-green);
+}
+
+.neighbor-description {
+    padding: 20px 24px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-text);
+    font-style: italic;
+}
+
+.neighbor-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 24px 24px;
+}
+
+.tag {
+    background: var(--color-background);
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 13px;
+    color: var(--color-text);
+}
+
+.neighbors-cta {
+    text-align: center;
+    padding: 48px 24px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-light-green));
+    border-radius: 20px;
+    color: var(--color-white);
+}
+
+.neighbors-cta p {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 24px;
+}
+
+.neighbors-cta .cta-button {
+    background: var(--color-white);
+    color: var(--color-primary);
+}
+
+.neighbors-cta .cta-button:hover {
+    background: var(--color-background);
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Улучшенная визуализация грядок в конструкторе */
+.bed-grid {
+    position: relative;
+}
+
+.bed-grid.size-small {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.bed-grid.size-medium {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.bed-grid.size-large {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+/* Адаптивность для новых секций */
+@media (max-width: 767px) {
+    .neighbors-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .chat-messages {
+        max-height: 300px;
+    }
+    
+    .message-content {
+        max-width: 85%;
+    }
+    
+    .harvest-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .harvest-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .neighbor-header {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
