@@ -1,0 +1,21 @@
+{
+  "name": "sad-landing",
+  "version": "1.0.0",
+  "description": "Лендинг для сервиса аренды грядок 'Сад'",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 8000 -o",
+    "deploy": "vercel",
+    "deploy:prod": "vercel --prod"
+  },
+  "keywords": [
+    "landing",
+    "garden",
+    "vegetables",
+    "berries",
+    "flowers"
+  ],
+  "author": "Сад",
+  "license": "MIT"
+}
+

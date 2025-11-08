@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Сад — современный сервис аренды грядок с онлайн-управлением. Выращивайте овощи, ягоды, цветы и фрукты без труда.">
+    <title>Сад — Ваш огород онлайн. Без труда, с урожаем.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Сезонный баннер -->
+    <div id="seasonal-banner" class="seasonal-banner">
+        <p>Весенняя акция: клубника в подарок к любой грядке! 🍓</p>
+        <button class="banner-close" aria-label="Закрыть баннер">×</button>
+    </div>
+
+    <!-- Навигация -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav-logo">
+                <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                    <rect x="4" y="20" width="24" height="8" rx="2" fill="currentColor"/>
+                    <path d="M12 20V12C12 10 10 8 8 8M16 20V8M20 20V12C20 10 22 8 24 8" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+                <span class="logo-text">Сад</span>
+            </div>
+            <button class="burger-menu" aria-label="Открыть меню" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#plants">Что растить</a></li>
+                <li><a href="#pricing">Тарифы</a></li>
+                <li><a href="#how-it-works">Как работает</a></li>
+                <li><a href="#blog">Блог</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero секция -->
+    <section class="hero" id="hero">
+        <div class="hero-content container">
+            <h1 class="hero-title">Ваш огород — онлайн. Без труда, с урожаем.</h1>
+            <p class="hero-subtitle">Арендуйте грядки, выбирайте растения, ягоды и цветы, следите за ростом и получайте свежий урожай.</p>
+            <button class="cta-button">Начать свой огород</button>
+        </div>
+        <div class="hero-illustration" aria-hidden="true">
+            <!-- SVG иллюстрация огорода -->
+            <svg class="garden-svg" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                <!-- Грядки -->
+                <rect class="bed" x="50" y="300" width="200" height="80" rx="8" fill="#718F71"/>
+                <rect class="bed" x="300" y="300" width="200" height="80" rx="8" fill="#56AB91"/>
+                <rect class="bed" x="550" y="300" width="200" height="80" rx="8" fill="#718F71"/>
+                
+                <!-- Растения (овощи) -->
+                <g class="plant sprout" data-delay="0">
+                    <ellipse cx="150" cy="300" rx="15" ry="8" fill="#56AB91"/>
+                    <path d="M150 300 Q145 260 140 240 Q140 230 145 225" stroke="#56AB91" stroke-width="3" fill="none"/>
+                    <ellipse cx="145" cy="225" rx="10" ry="15" fill="#A8E6CF"/>
+                </g>
+                
+                <g class="plant sprout" data-delay="0.2">
+                    <ellipse cx="180" cy="300" rx="15" ry="8" fill="#56AB91"/>
+                    <path d="M180 300 Q182 270 185 245 Q185 235 180 230" stroke="#56AB91" stroke-width="3" fill="none"/>
+                    <ellipse cx="180" cy="230" rx="12" ry="18" fill="#A8E6CF"/>
+                </g>
+                
+                <!-- Ягодный куст -->
+                <g class="plant berry-bush" data-delay="0.4">
+                    <ellipse cx="400" cy="300" rx="20" ry="10" fill="#56AB91"/>
+                    <circle cx="390" cy="270" r="25" fill="#56AB91" opacity="0.7"/>
+                    <circle cx="410" cy="270" r="25" fill="#56AB91" opacity="0.7"/>
+                    <circle cx="400" cy="260" r="22" fill="#718F71"/>
+                    <!-- Ягоды -->
+                    <circle class="berry" cx="395" cy="265" r="5" fill="#E63946"/>
+                    <circle class="berry" cx="405" cy="270" r="5" fill="#E63946"/>
+                    <circle class="berry" cx="390" cy="275" r="5" fill="#FF6B6B"/>
+                </g>
+                
+                <!-- Цветы -->
+                <g class="plant flower" data-delay="0.6">
+                    <line x1="650" y1="300" x2="650" y2="250" stroke="#56AB91" stroke-width="3"/>
+                    <circle cx="650" cy="245" r="8" fill="#FFB703"/>
+                    <g class="petals">
+                        <ellipse cx="650" cy="230" rx="8" ry="15" fill="#B298DC"/>
+                        <ellipse cx="665" cy="245" rx="15" ry="8" fill="#B298DC"/>
+                        <ellipse cx="650" cy="260" rx="8" ry="15" fill="#B298DC"/>
+                        <ellipse cx="635" cy="245" rx="15" ry="8" fill="#B298DC"/>
+                    </g>
+                </g>
+                
+                <g class="plant flower" data-delay="0.8">
+                    <line x1="680" y1="300" x2="680" y2="260" stroke="#56AB91" stroke-width="3"/>
+                    <circle cx="680" cy="255" r="6" fill="#FFB703"/>
+                    <g class="petals">
+                        <ellipse cx="680" cy="243" rx="6" ry="12" fill="#FF6B6B"/>
+                        <ellipse cx="692" cy="255" rx="12" ry="6" fill="#FF6B6B"/>
+                        <ellipse cx="680" cy="267" rx="6" ry="12" fill="#FF6B6B"/>
+                        <ellipse cx="668" cy="255" rx="12" ry="6" fill="#FF6B6B"/>
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Как это работает -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Как это работает</h2>
+            <div class="steps">
+                <article class="step-card" data-animate>
+                    <div class="step-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">
+                            <rect x="8" y="32" width="48" height="20" rx="4" fill="#56AB91"/>
+                            <path d="M20 32V20C20 16 16 12 12 12M32 32V12M44 32V20C44 16 48 12 52 12" stroke="#A8E6CF" stroke-width="3" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Выберите грядку</h3>
+                    <p>Подберите размер от 4 до 20 м² под ваши потребности и культуры</p>
+                </article>
+                
+                <article class="step-card" data-animate>
+                    <div class="step-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">
+                            <circle cx="32" cy="24" r="12" fill="#FFB703"/>
+                            <circle cx="32" cy="24" r="8" fill="#FF6B6B"/>
+                            <line x1="32" y1="36" x2="32" y2="52" stroke="#56AB91" stroke-width="4"/>
+                            <path d="M20 44 Q18 40 22 38 Q26 36 28 40" fill="#A8E6CF"/>
+                            <path d="M44 44 Q46 40 42 38 Q38 36 36 40" fill="#A8E6CF"/>
+                        </svg>
+                    </div>
+                    <h3>Посадите что захотите</h3>
+                    <p>Овощи, ягоды, цветы, фрукты — выбирайте из 60+ культур или готовых комбинаций</p>
+                </article>
+                
+                <article class="step-card" data-animate>
+                    <div class="step-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">
+                            <path d="M16 24 L32 40 L48 24 L48 52 L16 52 Z" fill="#718F71" stroke="#56AB91" stroke-width="2"/>
+                            <circle cx="24" cy="36" r="6" fill="#FF6B6B"/>
+                            <circle cx="32" cy="42" r="5" fill="#E63946"/>
+                            <circle cx="40" cy="38" r="6" fill="#FFB703"/>
+                        </svg>
+                    </div>
+                    <h3>Получите урожай домой</h3>
+                    <p>Следите за ростом онлайн, а мы привезём свежий урожай прямо к двери</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Что можно вырастить -->
+    <section class="plants-section" id="plants">
+        <div class="container">
+            <h2 class="section-title">Выращивайте всё, что растёт в России</h2>
+            
+            <div class="plants-tabs">
+                <button class="tab-button active" data-category="vegetables">🥬 Овощи</button>
+                <button class="tab-button" data-category="herbs">🌿 Зелень</button>
+                <button class="tab-button" data-category="berries">🍓 Ягоды</button>
+                <button class="tab-button" data-category="flowers">🌸 Цветы</button>
+                <button class="tab-button" data-category="fruits">🍎 Фрукты</button>
+            </div>
+            
+            <div class="plants-grid" id="plants-grid">
+                <!-- Овощи -->
+                <div class="plant-item" data-category="vegetables" data-name="Помидоры" data-days="90" data-difficulty="2" data-season="spring" data-yield="5кг">
+                    <div class="plant-emoji">🍅</div>
+                    <h4>Помидоры</h4>
+                    <span class="plant-time">90 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="vegetables" data-name="Огурцы" data-days="60" data-difficulty="1" data-season="spring" data-yield="8кг">
+                    <div class="plant-emoji">🥒</div>
+                    <h4>Огурцы</h4>
+                    <span class="plant-time">60 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="vegetables" data-name="Перец" data-days="100" data-difficulty="2" data-season="spring" data-yield="3кг">
+                    <div class="plant-emoji">🫑</div>
+                    <h4>Перец</h4>
+                    <span class="plant-time">100 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="vegetables" data-name="Морковь" data-days="80" data-difficulty="1" data-season="spring" data-yield="4кг">
+                    <div class="plant-emoji">🥕</div>
+                    <h4>Морковь</h4>
+                    <span class="plant-time">80 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="vegetables" data-name="Свёкла" data-days="75" data-difficulty="1" data-season="spring" data-yield="3кг">
+                    <div class="plant-emoji">🫐</div>
+                    <h4>Свёкла</h4>
+                    <span class="plant-time">75 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="vegetables" data-name="Редис" data-days="25" data-difficulty="1" data-season="spring" data-yield="2кг">
+                    <div class="plant-emoji">🔴</div>
+                    <h4>Редис</h4>
+                    <span class="plant-time">25 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="vegetables" data-name="Кабачки" data-days="50" data-difficulty="1" data-season="spring" data-yield="10кг">
+                    <div class="plant-emoji">🥒</div>
+                    <h4>Кабачки</h4>
+                    <span class="plant-time">50 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="vegetables" data-name="Баклажаны" data-days="110" data-difficulty="3" data-season="spring" data-yield="4кг">
+                    <div class="plant-emoji">🍆</div>
+                    <h4>Баклажаны</h4>
+                    <span class="plant-time">110 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="vegetables" data-name="Капуста" data-days="90" data-difficulty="2" data-season="spring" data-yield="6кг">
+                    <div class="plant-emoji">🥬</div>
+                    <h4>Капуста</h4>
+                    <span class="plant-time">90 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="vegetables" data-name="Тыква" data-days="100" data-difficulty="1" data-season="spring" data-yield="15кг">
+                    <div class="plant-emoji">🎃</div>
+                    <h4>Тыква</h4>
+                    <span class="plant-time">100 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="vegetables" data-name="Лук" data-days="100" data-difficulty="1" data-season="spring" data-yield="3кг">
+                    <div class="plant-emoji">🧅</div>
+                    <h4>Лук</h4>
+                    <span class="plant-time">100 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="vegetables" data-name="Чеснок" data-days="180" data-difficulty="1" data-season="fall" data-yield="1.5кг">
+                    <div class="plant-emoji">🧄</div>
+                    <h4>Чеснок</h4>
+                    <span class="plant-time">180 дней</span>
+                </div>
+                
+                <!-- Зелень -->
+                <div class="plant-item" data-category="herbs" data-name="Укроп" data-days="40" data-difficulty="1" data-season="spring" data-yield="1кг">
+                    <div class="plant-emoji">🌿</div>
+                    <h4>Укроп</h4>
+                    <span class="plant-time">40 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="herbs" data-name="Петрушка" data-days="70" data-difficulty="1" data-season="spring" data-yield="1кг">
+                    <div class="plant-emoji">🌿</div>
+                    <h4>Петрушка</h4>
+                    <span class="plant-time">70 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="herbs" data-name="Базилик" data-days="60" data-difficulty="2" data-season="spring" data-yield="0.8кг">
+                    <div class="plant-emoji">🌿</div>
+                    <h4>Базилик</h4>
+                    <span class="plant-time">60 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="herbs" data-name="Руккола" data-days="30" data-difficulty="1" data-season="spring" data-yield="1кг">
+                    <div class="plant-emoji">🥬</div>
+                    <h4>Руккола</h4>
+                    <span class="plant-time">30 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="herbs" data-name="Салат" data-days="45" data-difficulty="1" data-season="spring" data-yield="2кг">
+                    <div class="plant-emoji">🥗</div>
+                    <h4>Салат</h4>
+                    <span class="plant-time">45 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="herbs" data-name="Кинза" data-days="40" data-difficulty="1" data-season="spring" data-yield="0.8кг">
+                    <div class="plant-emoji">🌿</div>
+                    <h4>Кинза</h4>
+                    <span class="plant-time">40 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="herbs" data-name="Щавель" data-days="60" data-difficulty="1" data-season="spring" data-yield="1.5кг">
+                    <div class="plant-emoji">🌿</div>
+                    <h4>Щавель</h4>
+                    <span class="plant-time">60 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="herbs" data-name="Шпинат" data-days="40" data-difficulty="1" data-season="spring" data-yield="1.2кг">
+                    <div class="plant-emoji">🥬</div>
+                    <h4>Шпинат</h4>
+                    <span class="plant-time">40 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="herbs" data-name="Мята" data-days="90" data-difficulty="1" data-season="spring" data-yield="0.5кг">
+                    <div class="plant-emoji">🌿</div>
+                    <h4>Мята</h4>
+                    <span class="plant-time">90 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="herbs" data-name="Розмарин" data-days="120" data-difficulty="2" data-season="spring" data-yield="0.3кг">
+                    <div class="plant-emoji">🌿</div>
+                    <h4>Розмарин</h4>
+                    <span class="plant-time">120 дней</span>
+                </div>
+                
+                <!-- Ягоды -->
+                <div class="plant-item" data-category="berries" data-name="Клубника" data-days="90" data-difficulty="2" data-season="spring" data-yield="2кг">
+                    <div class="plant-emoji">🍓</div>
+                    <h4>Клубника</h4>
+                    <span class="plant-time">90 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="berries" data-name="Малина" data-days="365" data-difficulty="2" data-season="fall" data-yield="3кг">
+                    <div class="plant-emoji">🫐</div>
+                    <h4>Малина</h4>
+                    <span class="plant-time">2-й год</span>
+                </div>
+                
+                <div class="plant-item" data-category="berries" data-name="Смородина" data-days="365" data-difficulty="2" data-season="fall" data-yield="4кг">
+                    <div class="plant-emoji">🫐</div>
+                    <h4>Смородина</h4>
+                    <span class="plant-time">2-й год</span>
+                </div>
+                
+                <div class="plant-item" data-category="berries" data-name="Крыжовник" data-days="365" data-difficulty="2" data-season="fall" data-yield="3кг">
+                    <div class="plant-emoji">🫐</div>
+                    <h4>Крыжовник</h4>
+                    <span class="plant-time">2-й год</span>
+                </div>
+                
+                <div class="plant-item" data-category="berries" data-name="Ежевика" data-days="365" data-difficulty="2" data-season="fall" data-yield="3кг">
+                    <div class="plant-emoji">🫐</div>
+                    <h4>Ежевика</h4>
+                    <span class="plant-time">2-й год</span>
+                </div>
+                
+                <div class="plant-item" data-category="berries" data-name="Голубика" data-days="730" data-difficulty="3" data-season="fall" data-yield="5кг">
+                    <div class="plant-emoji">🫐</div>
+                    <h4>Голубика</h4>
+                    <span class="plant-time">3-й год</span>
+                </div>
+                
+                <div class="plant-item" data-category="berries" data-name="Жимолость" data-days="730" data-difficulty="2" data-season="fall" data-yield="2кг">
+                    <div class="plant-emoji">🫐</div>
+                    <h4>Жимолость</h4>
+                    <span class="plant-time">3-й год</span>
+                </div>
+                
+                <div class="plant-item" data-category="berries" data-name="Земляника" data-days="60" data-difficulty="1" data-season="spring" data-yield="1кг">
+                    <div class="plant-emoji">🍓</div>
+                    <h4>Земляника</h4>
+                    <span class="plant-time">60 дней</span>
+                </div>
+                
+                <!-- Цветы -->
+                <div class="plant-item" data-category="flowers" data-name="Тюльпаны" data-days="120" data-difficulty="1" data-season="fall" data-yield="20 шт">
+                    <div class="plant-emoji">🌷</div>
+                    <h4>Тюльпаны</h4>
+                    <span class="plant-time">120 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="flowers" data-name="Пионы" data-days="730" data-difficulty="2" data-season="fall" data-yield="15 шт">
+                    <div class="plant-emoji">🌺</div>
+                    <h4>Пионы</h4>
+                    <span class="plant-time">2-3 года</span>
+                </div>
+                
+                <div class="plant-item" data-category="flowers" data-name="Розы" data-days="365" data-difficulty="3" data-season="spring" data-yield="30 шт">
+                    <div class="plant-emoji">🌹</div>
+                    <h4>Розы</h4>
+                    <span class="plant-time">1 год</span>
+                </div>
+                
+                <div class="plant-item" data-category="flowers" data-name="Лаванда" data-days="180" data-difficulty="2" data-season="spring" data-yield="0.5кг">
+                    <div class="plant-emoji">🪻</div>
+                    <h4>Лаванда</h4>
+                    <span class="plant-time">180 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="flowers" data-name="Астры" data-days="90" data-difficulty="1" data-season="spring" data-yield="25 шт">
+                    <div class="plant-emoji">🌸</div>
+                    <h4>Астры</h4>
+                    <span class="plant-time">90 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="flowers" data-name="Георгины" data-days="100" data-difficulty="2" data-season="spring" data-yield="20 шт">
+                    <div class="plant-emoji">🌺</div>
+                    <h4>Георгины</h4>
+                    <span class="plant-time">100 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="flowers" data-name="Гладиолусы" data-days="90" data-difficulty="2" data-season="spring" data-yield="20 шт">
+                    <div class="plant-emoji">🌸</div>
+                    <h4>Гладиолусы</h4>
+                    <span class="plant-time">90 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="flowers" data-name="Ромашки" data-days="70" data-difficulty="1" data-season="spring" data-yield="30 шт">
+                    <div class="plant-emoji">🌼</div>
+                    <h4>Ромашки</h4>
+                    <span class="plant-time">70 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="flowers" data-name="Подсолнухи" data-days="80" data-difficulty="1" data-season="spring" data-yield="10 шт">
+                    <div class="plant-emoji">🌻</div>
+                    <h4>Подсолнухи</h4>
+                    <span class="plant-time">80 дней</span>
+                </div>
+                
+                <div class="plant-item" data-category="flowers" data-name="Календула" data-days="60" data-difficulty="1" data-season="spring" data-yield="50 шт">
+                    <div class="plant-emoji">🌼</div>
+                    <h4>Календула</h4>
+                    <span class="plant-time">60 дней</span>
+                </div>
+                
+                <!-- Фрукты -->
+                <div class="plant-item" data-category="fruits" data-name="Яблоки" data-days="1095" data-difficulty="3" data-season="fall" data-yield="15кг">
+                    <div class="plant-emoji">🍎</div>
+                    <h4>Яблоки</h4>
+                    <span class="plant-time">3-4 года</span>
+                </div>
+                
+                <div class="plant-item" data-category="fruits" data-name="Груши" data-days="1095" data-difficulty="3" data-season="fall" data-yield="12кг">
+                    <div class="plant-emoji">🍐</div>
+                    <h4>Груши</h4>
+                    <span class="plant-time">3-4 года</span>
+                </div>
+                
+                <div class="plant-item" data-category="fruits" data-name="Слива" data-days="1095" data-difficulty="2" data-season="fall" data-yield="10кг">
+                    <div class="plant-emoji">🟣</div>
+                    <h4>Слива</h4>
+                    <span class="plant-time">3 года</span>
+                </div>
+                
+                <div class="plant-item" data-category="fruits" data-name="Вишня" data-days="1095" data-difficulty="2" data-season="fall" data-yield="8кг">
+                    <div class="plant-emoji">🍒</div>
+                    <h4>Вишня</h4>
+                    <span class="plant-time">3 года</span>
+                </div>
+                
+                <div class="plant-item" data-category="fruits" data-name="Абрикос" data-days="1460" data-difficulty="3" data-season="fall" data-yield="12кг">
+                    <div class="plant-emoji">🍑</div>
+                    <h4>Абрикос</h4>
+                    <span class="plant-time">4-5 лет</span>
+                </div>
+                
+                <div class="plant-item" data-category="fruits" data-name="Виноград" data-days="730" data-difficulty="3" data-season="spring" data-yield="6кг">
+                    <div class="plant-emoji">🍇</div>
+                    <h4>Виноград</h4>
+                    <span class="plant-time">2-3 года</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Интерактивный конструктор -->
+    <section class="constructor-section" id="constructor">
+        <div class="container">
+            <h2 class="section-title">Создайте свой огород за 3 минуты</h2>
+            
+            <div class="constructor">
+                <div class="bed-sizes">
+                    <h3>Выберите размер грядки</h3>
+                    <div class="size-cards">
+                        <button class="size-card" data-size="4" data-price="1800">
+                            <span class="size-number">4м²</span>
+                            <span class="size-description">Для зелени и цветов</span>
+                            <span class="size-price">1 800₽/мес</span>
+                        </button>
+                        <button class="size-card active" data-size="10" data-price="4200">
+                            <span class="size-number">10м²</span>
+                            <span class="size-description">Смешанный огород</span>
+                            <span class="size-price">4 200₽/мес</span>
+                        </button>
+                        <button class="size-card" data-size="20" data-price="7500">
+                            <span class="size-number">20м²</span>
+                            <span class="size-description">Ягодная ферма</span>
+                            <span class="size-price">7 500₽/мес</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="plant-selector">
+                    <h3>Выберите растения</h3>
+                    <div class="selector-tabs">
+                        <button class="selector-tab active" data-type="vegetables">🍅 Овощи</button>
+                        <button class="selector-tab" data-type="herbs">🌿 Зелень</button>
+                        <button class="selector-tab" data-type="berries">🍓 Ягоды</button>
+                        <button class="selector-tab" data-type="flowers">🌸 Цветы</button>
+                    </div>
+                    
+                    <div class="selector-items" id="selector-items">
+                        <button class="selector-item" data-plant="tomatoes">🍅 Помидоры</button>
+                        <button class="selector-item" data-plant="cucumbers">🥒 Огурцы</button>
+                        <button class="selector-item" data-plant="pepper">🫑 Перец</button>
+                        <button class="selector-item" data-plant="carrots">🥕 Морковь</button>
+                        <button class="selector-item" data-plant="pumpkin">🎃 Тыква</button>
+                        <button class="selector-item" data-plant="onion">🧅 Лук</button>
+                    </div>
+                </div>
+                
+                <div class="bed-visualization">
+                    <h3>Ваша грядка</h3>
+                    <div class="bed-grid" id="bed-grid">
+                        <!-- Сетка грядки будет генерироваться JS -->
+                    </div>
+                </div>
+                
+                <div class="calculator">
+                    <h3>Калькулятор</h3>
+                    <div class="calc-result">
+                        <div class="calc-item">
+                            <span class="calc-label">Стоимость:</span>
+                            <span class="calc-value" id="calc-price">4 200₽/мес</span>
+                        </div>
+                        <div class="calc-item">
+                            <span class="calc-label">Первый урожай:</span>
+                            <span class="calc-value" id="calc-time">60 дней</span>
+                        </div>
+                        <div class="calc-item">
+                            <span class="calc-label">Примерный урожай:</span>
+                            <span class="calc-value" id="calc-yield">~15 кг</span>
+                        </div>
+                    </div>
+                    <div class="calc-tips" id="calc-tips">
+                        <div class="tip tip-success">
+                            <span class="tip-icon">✓</span>
+                            <span>Эти растения хорошо растут вместе</span>
+                        </div>
+                    </div>
+                    <button class="cta-button">Создать мой сад</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Личный кабинет (превью) -->
+    <section class="dashboard-preview" id="dashboard">
+        <div class="container">
+            <h2 class="section-title">Ваша грядка в реальном времени</h2>
+            
+            <div class="dashboard-mockup">
+                <div class="dashboard-tabs">
+                    <button class="dashboard-tab active">📸 Фото</button>
+                    <button class="dashboard-tab">📊 Рост</button>
+                    <button class="dashboard-tab">💬 Агроном</button>
+                    <button class="dashboard-tab">🧺 Урожай</button>
+                </div>
+                
+                <div class="dashboard-content">
+                    <div class="garden-photo">
+                        <div class="photo-placeholder">
+                            <svg width="100%" height="300" viewBox="0 0 600 300" aria-hidden="true">
+                                <rect width="600" height="300" fill="#E8F5E9"/>
+                                <rect x="50" y="180" width="150" height="80" rx="8" fill="#718F71"/>
+                                <rect x="225" y="180" width="150" height="80" rx="8" fill="#56AB91"/>
+                                <rect x="400" y="180" width="150" height="80" rx="8" fill="#718F71"/>
+                                
+                                <!-- Растения -->
+                                <circle cx="100" cy="170" r="20" fill="#A8E6CF"/>
+                                <circle cx="140" cy="165" r="25" fill="#56AB91"/>
+                                <circle cx="300" cy="160" r="18" fill="#FF6B6B"/>
+                                <circle cx="320" cy="165" r="18" fill="#E63946"/>
+                                <circle cx="450" cy="155" r="22" fill="#B298DC"/>
+                                <circle cx="490" cy="160" r="20" fill="#FFB703"/>
+                                
+                                <text x="300" y="50" text-anchor="middle" fill="#2D3E2D" font-size="16">Фото от 5 ноября 2025</text>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="growth-progress">
+                        <h4>Прогресс роста</h4>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span>🍅 Помидоры</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span>🍓 Клубника</span>
+                                <span class="ready">100% — Готова к сбору!</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill complete" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span>🌷 Тюльпаны</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="garden-calendar">
+                        <h4>Календарь ухода</h4>
+                        <ul class="calendar-list">
+                            <li class="calendar-item today">
+                                <span class="calendar-date">Сегодня</span>
+                                <span class="calendar-task">Полив базилика</span>
+                            </li>
+                            <li class="calendar-item">
+                                <span class="calendar-date">Через 3 дня</span>
+                                <span class="calendar-task">Сбор клубники 🍓</span>
+                            </li>
+                            <li class="calendar-item">
+                                <span class="calendar-date">Через неделю</span>
+                                <span class="calendar-task">Подкормка роз</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Сезонность -->
+    <section class="seasons-section" id="seasons">
+        <div class="container">
+            <h2 class="section-title">Урожай круглый год</h2>
+            
+            <div class="seasons-timeline">
+                <button class="season-card" data-season="spring">
+                    <div class="season-icon">🌱</div>
+                    <h3>Весна</h3>
+                    <p>Март — Май</p>
+                </button>
+                
+                <button class="season-card" data-season="summer">
+                    <div class="season-icon">☀️</div>
+                    <h3>Лето</h3>
+                    <p>Июнь — Август</p>
+                </button>
+                
+                <button class="season-card" data-season="fall">
+                    <div class="season-icon">🍂</div>
+                    <h3>Осень</h3>
+                    <p>Сентябрь — Ноябрь</p>
+                </button>
+                
+                <button class="season-card" data-season="winter">
+                    <div class="season-icon">❄️</div>
+                    <h3>Зима</h3>
+                    <p>Декабрь — Февраль</p>
+                </button>
+            </div>
+            
+            <div class="season-plants" id="season-plants">
+                <div class="season-content active" data-season-content="spring">
+                    <h4>Что растёт весной</h4>
+                    <div class="season-tags">
+                        <span class="season-tag">Салат 🥗</span>
+                        <span class="season-tag">Редис 🔴</span>
+                        <span class="season-tag">Укроп 🌿</span>
+                        <span class="season-tag">Петрушка 🌿</span>
+                        <span class="season-tag">Руккола 🥬</span>
+                        <span class="season-tag">Тюльпаны 🌷</span>
+                        <span class="season-tag">Нарциссы 🌼</span>
+                    </div>
+                </div>
+                
+                <div class="season-content" data-season-content="summer">
+                    <h4>Что растёт летом</h4>
+                    <div class="season-tags">
+                        <span class="season-tag">Помидоры 🍅</span>
+                        <span class="season-tag">Огурцы 🥒</span>
+                        <span class="season-tag">Перец 🫑</span>
+                        <span class="season-tag">Клубника 🍓</span>
+                        <span class="season-tag">Малина 🫐</span>
+                        <span class="season-tag">Розы 🌹</span>
+                        <span class="season-tag">Подсолнухи 🌻</span>
+                    </div>
+                </div>
+                
+                <div class="season-content" data-season-content="fall">
+                    <h4>Что растёт осенью</h4>
+                    <div class="season-tags">
+                        <span class="season-tag">Тыква 🎃</span>
+                        <span class="season-tag">Свёкла 🫐</span>
+                        <span class="season-tag">Капуста 🥬</span>
+                        <span class="season-tag">Морковь 🥕</span>
+                        <span class="season-tag">Яблоки 🍎</span>
+                        <span class="season-tag">Георгины 🌺</span>
+                    </div>
+                </div>
+                
+                <div class="season-content" data-season-content="winter">
+                    <h4>Зимой</h4>
+                    <div class="season-tags">
+                        <span class="season-tag">Планирование сада 📝</span>
+                        <span class="season-tag">Теплица (опция) 🏠</span>
+                        <span class="season-tag">Микрозелень 🌱</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Тарифы -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Выберите свой тариф</h2>
+            
+            <div class="pricing-cards">
+                <article class="pricing-card">
+                    <h3 class="pricing-title">Зелёная Грядка</h3>
+                    <div class="pricing-price">
+                        <span class="price-amount">1 800₽</span>
+                        <span class="price-period">/месяц</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Грядка 4м²</li>
+                        <li>✓ Овощи и зелень</li>
+                        <li>✓ Фото раз в неделю</li>
+                        <li>✓ Базовый уход</li>
+                        <li>✓ Доставка урожая</li>
+                    </ul>
+                    <button class="pricing-button">Выбрать</button>
+                </article>
+                
+                <article class="pricing-card popular">
+                    <div class="popular-badge">⭐ Популярный</div>
+                    <h3 class="pricing-title">Садовод</h3>
+                    <div class="pricing-price">
+                        <span class="price-amount">4 200₽</span>
+                        <span class="price-period">/месяц</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Грядка 10м²</li>
+                        <li>✓ Овощи + ягоды + цветы</li>
+                        <li>✓ Фото 2 раза в неделю</li>
+                        <li>✓ Чат с агрономом</li>
+                        <li>✓ Первый урожай в подарок 🎁</li>
+                        <li>✓ Доставка 2 раза в неделю</li>
+                    </ul>
+                    <button class="pricing-button primary">Начать выращивать</button>
+                </article>
+                
+                <article class="pricing-card">
+                    <h3 class="pricing-title">Ягодная Ферма</h3>
+                    <div class="pricing-price">
+                        <span class="price-amount">7 500₽</span>
+                        <span class="price-period">/месяц</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Грядка 20м²</li>
+                        <li>✓ Всё + карликовые деревья</li>
+                        <li>✓ Фото каждый день</li>
+                        <li>✓ Личный агроном</li>
+                        <li>✓ Камера 24/7 📹</li>
+                        <li>✓ Доставка 2 раза в неделю</li>
+                        <li>✓ Приоритетная поддержка</li>
+                    </ul>
+                    <button class="pricing-button">Выбрать</button>
+                </article>
+            </div>
+            
+            <div class="additional-option">
+                <div class="option-card">
+                    <div class="option-icon">💐</div>
+                    <div class="option-content">
+                        <h4>Цветочная подписка</h4>
+                        <p>Свежие букеты из вашего сада каждую неделю</p>
+                        <span class="option-price">от 2 500₽/месяц</span>
+                    </div>
+                    <button class="option-button">Узнать больше</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Доверие -->
+    <section class="trust-section" id="trust">
+        <div class="container">
+            <h2 class="section-title">Нам доверяют</h2>
+            
+            <div class="stats">
+                <div class="stat-item" data-animate>
+                    <div class="stat-number" data-target="1200">0</div>
+                    <div class="stat-label">довольных садоводов</div>
+                </div>
+                
+                <div class="stat-item" data-animate>
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">тонн овощей и ягод</div>
+                </div>
+                
+                <div class="stat-item" data-animate>
+                    <div class="stat-number" data-target="5000">0</div>
+                    <div class="stat-label">букетов выращено</div>
+                </div>
+                
+                <div class="stat-item" data-animate>
+                    <div class="stat-number" data-target="98">0</div>
+                    <div class="stat-label">% успешных грядок</div>
+                </div>
+            </div>
+            
+            <div class="testimonials">
+                <article class="testimonial-card">
+                    <div class="testimonial-photo">
+                        <div class="testimonial-image">🧺</div>
+                    </div>
+                    <p class="testimonial-text">"Первый урожай помидоров и огурцов получила через 2 месяца! Вкуснее магазинных в 100 раз. Дети в восторге!"</p>
+                    <p class="testimonial-author">— Анна, Москва</p>
+                </article>
+                
+                <article class="testimonial-card">
+                    <div class="testimonial-photo">
+                        <div class="testimonial-image">🍓</div>
+                    </div>
+                    <p class="testimonial-text">"Клубника с собственной грядки — это что-то невероятное. Теперь делаю варенье и замораживаю на зиму."</p>
+                    <p class="testimonial-author">— Дмитрий, Санкт-Петербург</p>
+                </article>
+                
+                <article class="testimonial-card">
+                    <div class="testimonial-photo">
+                        <div class="testimonial-image">💐</div>
+                    </div>
+                    <p class="testimonial-text">"Цветочная подписка — лучший подарок себе. Каждую неделю свежие пионы и розы из моего сада!"</p>
+                    <p class="testimonial-author">— Елена, Екатеринбург</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Популярные комбинации -->
+    <section class="combos-section" id="combos">
+        <div class="container">
+            <h2 class="section-title">Популярные комбинации</h2>
+            <p class="section-subtitle">Готовые наборы для новичков</p>
+            
+            <div class="combo-cards">
+                <article class="combo-card">
+                    <div class="combo-icon">🍝</div>
+                    <h3>Итальянская грядка</h3>
+                    <div class="combo-plants">
+                        <span>🍅 Помидоры</span>
+                        <span>🌿 Базилик</span>
+                        <span>🫑 Перец</span>
+                        <span>🥬 Руккола</span>
+                    </div>
+                    <button class="combo-button">Посадить</button>
+                </article>
+                
+                <article class="combo-card">
+                    <div class="combo-icon">🍓</div>
+                    <h3>Ягодное лето</h3>
+                    <div class="combo-plants">
+                        <span>🍓 Клубника</span>
+                        <span>🫐 Малина</span>
+                        <span>🫐 Смородина</span>
+                        <span>🫐 Крыжовник</span>
+                    </div>
+                    <button class="combo-button">Посадить</button>
+                </article>
+                
+                <article class="combo-card">
+                    <div class="combo-icon">💐</div>
+                    <h3>Букетный сад</h3>
+                    <div class="combo-plants">
+                        <span>🌹 Розы</span>
+                        <span>🌺 Пионы</span>
+                        <span>🌸 Гладиолусы</span>
+                        <span>🌸 Астры</span>
+                    </div>
+                    <button class="combo-button">Посадить</button>
+                </article>
+                
+                <article class="combo-card">
+                    <div class="combo-icon">🥗</div>
+                    <h3>Салатный микс</h3>
+                    <div class="combo-plants">
+                        <span>🥗 5 видов салата</span>
+                        <span>🥬 Шпинат</span>
+                        <span>🥬 Руккола</span>
+                        <span>🌿 Петрушка</span>
+                    </div>
+                    <button class="combo-button">Посадить</button>
+                </article>
+                
+                <article class="combo-card">
+                    <div class="combo-icon">💪</div>
+                    <h3>Витаминная бомба</h3>
+                    <div class="combo-plants">
+                        <span>🥕 Морковь</span>
+                        <span>🫐 Свёкла</span>
+                        <span>🥬 Капуста</span>
+                        <span>🧄 Чеснок</span>
+                    </div>
+                    <button class="combo-button">Посадить</button>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="blog">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                            <rect x="4" y="20" width="24" height="8" rx="2" fill="currentColor"/>
+                            <path d="M12 20V12C12 10 10 8 8 8M16 20V8M20 20V12C20 10 22 8 24 8" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        <span class="logo-text">Сад</span>
+                    </div>
+                    <p class="footer-description">Ваш огород онлайн. Выращивайте овощи, ягоды и цветы без труда.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="ВКонтакте">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 12.5h-1.2c-.4 0-.5-.3-.5-.5 0-.2-.1-1.3-1-2.3-.6-.6-1.1-.6-1.3-.6s-.9.1-1.3.6c-.9 1-1 2.1-1 2.3 0 .2-.1.5-.5.5H7.5c-.3 0-.5-.2-.5-.5v-.3c0-1.8 1.5-3.8 3-4.8.4-.3 1-.5 1.5-.5h1c.5 0 1.1.2 1.5.5 1.5 1 3 3 3 4.8v.3c0 .3-.2.5-.5.5z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Telegram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.6 7.53c-.12.54-.44.67-.89.42l-2.46-1.82-1.19 1.14c-.13.13-.24.24-.49.24l.17-2.45 4.5-4.07c.2-.17-.04-.27-.3-.1l-5.56 3.5-2.4-.75c-.52-.16-.53-.52.11-.78l9.37-3.61c.43-.16.81.1.67.78z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772c-.5.509-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 011.153-1.772A4.897 4.897 0 015.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm6.5-.25a1.25 1.25 0 10-2.5 0 1.25 1.25 0 002.5 0zM12 9a3 3 0 110 6 3 3 0 010-6z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Навигация</h4>
+                    <ul class="footer-links">
+                        <li><a href="#plants">Что выращивать</a></li>
+                        <li><a href="#pricing">Тарифы</a></li>
+                        <li><a href="#how-it-works">Как это работает</a></li>
+                        <li><a href="#seasons">Сезонный календарь</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Полезное</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Блог о выращивании</a></li>
+                        <li><a href="#">Рецепты из овощей</a></li>
+                        <li><a href="#">Идеи с цветами</a></li>
+                        <li><a href="#">Сообщество садоводов</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Поддержка</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Частые вопросы</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Условия использования</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Сад. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Плавающая кнопка -->
+    <button class="floating-button" aria-label="Спросить агронома">
+        <svg class="floating-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z" fill="currentColor"/>
+            <ellipse cx="12" cy="16" rx="6" ry="3" fill="currentColor"/>
+            <path d="M12 8v4m0 4h.01" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+    </button>
+
+    <!-- Прелоадер -->
+    <div class="preloader" id="preloader">
+        <div class="seed-animation">
+            <svg width="60" height="60" viewBox="0 0 60 60" aria-hidden="true">
+                <ellipse class="seed" cx="30" cy="40" rx="8" ry="10" fill="#718F71"/>
+                <path class="sprout" d="M30 40 L30 20 M30 20 Q28 15 25 12" stroke="#56AB91" stroke-width="3" fill="none"/>
+                <ellipse class="leaf" cx="25" cy="12" rx="5" ry="8" fill="#A8E6CF"/>
+            </svg>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
